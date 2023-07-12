@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./colors.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+    </style>
+    <style>
+      body {
+        width: 98%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+
+        font-family: "Roboto", sans-serif;
+      }
+      .main-container {
+        width: 100%;
+        height: 100%;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: centers;
+        justify-content: space-between;
+        margin-left: -10px;
+        border-bottom: 1px solid black;
+      }
+      .navbar .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: centers;
+        justify-content: center;
+        margin-left: 10px;
+      }
+      .navbar .logo img {
+        height: 60px;
+        margin: 0 8px 0 0;
+      }
+      .navbar .options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navbar .options img {
+        height: 40px;
+        margin: 6px;
+      }
+      .navbar .options img:hover {
+        cursor: pointer;
+      }
+      .data-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+        height: 100%;
+        margin-top: 20px;
+      }
+      .data-subcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        height: 100%;
+      }
+      .data-subcontainer div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 68px;
+        margin: 10px;
+        border: 2px solid gray;
+        border-radius: 30px;
+      }
+      .data-subcontainer div img {
+        height: 40px;
+        margin: 10px;
+      }
+      .notification-container {
+        width: 94%;
+        height: 100%;
+        margin: 30px;
+        border: 1px solid black;
+        border-radius: 30px;
+      }
+      .notification-container div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        margin: 15px;
+      }
+      .notification-container div img {
+        height: 30px;
+        margin: 0 10px 0 10px;
+      }
+
+      @media (min-width: 600px) {
+        .navbar {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          margin: -10px;
+          border-bottom: 1px solid black;
+        }
+        .navbar h1 {
+          font-size: 20px;
+        }
+        .navbar .logo {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+        .navbar .logo img {
+          height: 34px;
+          margin: 0 8px 0 0;
+        }
+        .navbar .options {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+        .navbar .options img {
+          height: 30px;
+          margin: 6px;
+        }
+
+        .data-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          align-items: center;
+          width: 98%;
+          height: 100%;
+          margin: 32px;
+        }
+        .data-subcontainer {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          align-items: center;
+          width: 98%;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./assets/Logo.png" alt="" />
+          <h1>Huerto Vertical</h1>
+        </div>
+        <div class="options">
+          <img src="./assets/Menu.png" alt="" />
+          <img src="./assets/Porfile.png" alt="" />
+        </div>
+      </nav>
+      <div class="data-container">
+        <div>
+          <h3>Ultimos datos registrados</h3>
+        </div>
+        <div class="data-subcontainer">
+          <div>
+            <p>Temperatura</p>
+            <img src="./assets/Temperatura.png" alt="" />
+          </div>
+          <div>
+            <p>Luz</p>
+            <img src="./assets/Luz.png" alt="" />
+          </div>
+          <div>
+            <p>Humedad</p>
+            <img src="./assets/Humedad.png" alt="" />
+          </div>
+        </div>
+
+        <aside class="notification-container">
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>Riego registrado a las: 06:24 con una duración de 3:56 horas</p>
+          </div>
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>Descenso de temperatura registrado a las 23:46.</p>
+          </div>
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>Riego manual a las 5:79 por parte de Usuario1.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

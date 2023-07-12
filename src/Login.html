@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+      body {
+        width: 98%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+
+        font-family: "Roboto", sans-serif;
+      }
+      .main-container {
+        width: 100%;
+        height: 100%;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: centers;
+        justify-content: space-between;
+        margin-left: -10px;
+        border-bottom: 1px solid black;
+      }
+      .navbar .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: centers;
+        justify-content: center;
+        margin-left: 10px;
+      }
+      .navbar .logo img {
+        height: 60px;
+        margin: 0 8px 0 0;
+      }
+      .navbar .options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navbar .options img {
+        height: 40px;
+        margin: 6px;
+      }
+      .navbar .options img:hover {
+        cursor: pointer;
+      }
+      .login-container {
+        width: 98%;
+        height: 78vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .change-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .change-container p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 161.5px;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 10px 10px 0 0;
+      }
+      .change-container p:hover {
+        cursor: pointer;
+      }
+      .form-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 285px;
+        height: 222px;
+        padding: 21px;
+        border-top: 0px solid black;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        border-radius: 0 0 10px 10px;
+      }
+      .form-login div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .form-login div input {
+        margin: 15px 5px;
+        padding: 5px 15px;
+        height: 32px;
+        width: 202px;
+        border: 2px solid gray;
+        border-radius: 10px;
+      }
+      .form-login div * {
+        margin: 10px 1px;
+      }
+      .form-login div img {
+        height: 38px;
+      }
+      #login-button {
+        width: 100%;
+        height: 42px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+      }
+      #login-button {
+        cursor: pointer;
+      }
+      #login {
+        position: relative;
+      }
+      #registro {
+        position: relative;
+      }
+
+      .visible {
+        display: block;
+      }
+      .invisible {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./assets/Logo.png" alt="" />
+          <h1>Huerto Vertical</h1>
+        </div>
+        <div class="options">
+          <img src="./assets/Menu.png" alt="" />
+          <img src="./assets/Porfile.png" alt="" />
+        </div>
+      </nav>
+
+      <div class="login-container">
+        <div class="change-container">
+          <p id="login">Login</p>
+          <p id="registro">Registro</p>
+        </div>
+        <form action="" id="login-view" class="form-login visible">
+          <div>
+            <img src="./assets/Username.png" alt="" />
+            <input type="text" placeholder="Usuario" />
+          </div>
+          <div>
+            <img src="./assets/Password.png" alt="" />
+            <input type="text" placeholder="Contraseña" />
+          </div>
+          <button id="login-button">Login</button>
+        </form>
+
+        <form action="" id="register-view" class="form-login invisible">
+          <div>
+            <img src="./assets/Username.png" alt="" />
+            <input type="text" placeholder="Email" />
+          </div>
+          <div>
+            <img src="./assets/Password.png" alt="" />
+            <input type="text" placeholder="Contraseña" />
+          </div>
+          <button id="login-button">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    const login = document.getElementById("login");
+    const registro = document.getElementById("registro");
+
+    const loginView = document.getElementById("login-view");
+    const registerView = document.getElementById("register-view");
+
+    const changeToLogin = () => {
+      console.log("Hola 1");
+      loginView.classList.add("visible");
+      loginView.classList.remove("invisible");
+      registerView.classList.add("invisible");
+      registerView.classList.remove("visible");
+
+      login.style.background = '#2D9BF0';
+      registro.style.background = 'transparent';
+    };
+
+    const changeToRegister = () => {
+      console.log("Hola 2");
+      loginView.classList.add("invisible");
+      loginView.classList.remove("visible");
+      registerView.classList.add("visible");
+      registerView.classList.remove("invisible");
+
+      registro.style.background = '#2D9BF0';
+      login.style.background = 'transparent';
+    };
+
+    login.addEventListener("click", changeToLogin);
+    registro.addEventListener("click", changeToRegister);
+  </script>
+</html>

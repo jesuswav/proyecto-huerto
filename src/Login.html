@@ -24,8 +24,9 @@
         display: flex;
         flex-direction: row;
         align-items: centers;
-        justify-content: space-between;
+        justify-content: center;
         margin-left: -10px;
+        width: 102.5%;
         border-bottom: 1px solid black;
       }
       .navbar .logo {
@@ -73,9 +74,13 @@
         height: 100%;
         border: 2px solid black;
         border-radius: 10px 10px 0 0;
+        font-weight: 500;
       }
       .change-container p:hover {
         cursor: pointer;
+      }
+      #login {
+        background: #c8c8c8;
       }
       .form-login {
         display: flex;
@@ -117,6 +122,8 @@
         margin-top: 20px;
         border: none;
         border-radius: 10px;
+        background: #2d9bf0;
+        font-weight: bold;
       }
       #login-button {
         cursor: pointer;
@@ -126,6 +133,40 @@
       }
       #registro {
         position: relative;
+      }
+
+      @media (min-width: 600px) {
+        .navbar {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          margin: -10px;
+          border-bottom: 2px solid black;
+        }
+        .navbar h1 {
+          font-size: 25px;
+        }
+        .navbar .logo {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          margin-left: 10px;
+        }
+        .navbar .logo img {
+          height: 34px;
+          margin: 0 8px 0 0;
+        }
+        .navbar .options {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+        .navbar .options img {
+          height: 30px;
+          margin: 6px;
+        }
       }
 
       .visible {
@@ -142,10 +183,6 @@
         <div class="logo">
           <img src="./assets/Logo.png" alt="" />
           <h1>Huerto Vertical</h1>
-        </div>
-        <div class="options">
-          <img src="./assets/Menu.png" alt="" />
-          <img src="./assets/Porfile.png" alt="" />
         </div>
       </nav>
 
@@ -194,8 +231,8 @@
       registerView.classList.add("invisible");
       registerView.classList.remove("visible");
 
-      login.style.background = '#2D9BF0';
-      registro.style.background = 'transparent';
+      login.style.background = "#C8C8C8";
+      registro.style.background = "transparent";
     };
 
     const changeToRegister = () => {
@@ -205,8 +242,8 @@
       registerView.classList.add("visible");
       registerView.classList.remove("invisible");
 
-      registro.style.background = '#2D9BF0';
-      login.style.background = 'transparent';
+      registro.style.background = "#C8C8C8";
+      login.style.background = "transparent";
     };
 
     login.addEventListener("click", changeToLogin);

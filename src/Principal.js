@@ -68,6 +68,7 @@ const viewInit = () => {
   registerContainer.classList.add("hidden-nav");
   registerContainer.classList.remove("visible-nav");
 
+  // Cambiar los colores del boton
   inicioMobile.classList.add("pushed");
   registerMobile.classList.remove("pushed");
   galleryMobile.classList.remove("pushed");
@@ -84,6 +85,7 @@ const viewGallery = () => {
   registerContainer.classList.add("visible-nav");
   registerContainer.classList.remove("hidden-nav");
 
+  // Cambiar los colores del boton
   inicioMobile.classList.remove("pushed");
   registerMobile.classList.remove("pushed");
   galleryMobile.classList.add("pushed");
@@ -100,6 +102,7 @@ const viewRegister = () => {
   registerContainer.classList.add("hidden-nav");
   registerContainer.classList.remove("visible-nav");
 
+  // Cambiar los colores del boton
   inicioMobile.classList.remove("pushed");
   registerMobile.classList.add("pushed");
   galleryMobile.classList.remove("pushed");

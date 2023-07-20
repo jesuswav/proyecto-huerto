@@ -50,14 +50,20 @@ body {
   display: none;
 }
 .nav-menu-container {
+  position: fixed !important;
+  overflow-y: scroll;
+  bottom: 0;
+  
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 0 0 20px 0;
-  margin: 20px 0 0 2px;
+  margin: 0px 0 0 -8px;
+  background: white;
 
+  border-top: 1px solid rgba(0, 0, 0, 0.815);
   border-bottom: 1px solid rgba(0, 0, 0, 0.144);
 }
 .nav-menu-container .nav-menu-center-mobile {
@@ -70,17 +76,22 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: black;
+  color: rgb(109, 109, 109);
   padding: 4px 8px;
-  margin: 0 4px 0 4px;
+  margin: 15px 4px 0px 4px;
   border: 2px solid black;
   border-radius: 8px;
 }
+.pushed {
+  background: rgb(223, 223, 223);
+}
 
 #menu-container {
+  z-index: 10;
+
   margin-top: 20px;
-  width: 95%;
-  height: 85vh;
+  width: 98%;
+  height: 88vh;
   background: white;
   position: absolute;
 
@@ -149,6 +160,8 @@ body {
   width: 98%;
   height: 100%;
   margin-top: 2px;
+
+  margin-bottom: 72px;
 }
 .data-subcontainer {
   display: flex;
@@ -194,7 +207,9 @@ body {
 
 /* Styles for porfile-info ------------------- */
 #porfile-info {
-  width: 95%;
+  z-index: 10;
+
+  width: 98%;
   height: 90vh;
 
   position: absolute;

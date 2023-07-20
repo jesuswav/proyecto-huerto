@@ -68,6 +68,10 @@ const viewInit = () => {
   registerContainer.classList.add("hidden-nav");
   registerContainer.classList.remove("visible-nav");
 
+  inicioMobile.classList.add("pushed");
+  registerMobile.classList.remove("pushed");
+  galleryMobile.classList.remove("pushed");
+
   console.log("-------------")
 };
 const viewGallery = () => {
@@ -80,6 +84,10 @@ const viewGallery = () => {
   registerContainer.classList.add("visible-nav");
   registerContainer.classList.remove("hidden-nav");
 
+  inicioMobile.classList.remove("pushed");
+  registerMobile.classList.remove("pushed");
+  galleryMobile.classList.add("pushed");
+
   console.log("-------------")
 };
 const viewRegister = () => {
@@ -91,6 +99,10 @@ const viewRegister = () => {
 
   registerContainer.classList.add("hidden-nav");
   registerContainer.classList.remove("visible-nav");
+
+  inicioMobile.classList.remove("pushed");
+  registerMobile.classList.add("pushed");
+  galleryMobile.classList.remove("pushed");
 
   console.log("-------------")
 };

@@ -3,277 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Principal</title>
     <link rel="stylesheet" href="./colors.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
-    </style>
-    <style>
-      body {
-        width: 98%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: left;
-
-        font-family: "Roboto", sans-serif;
-      }
-      .main-container {
-        width: 98%;
-        height: 100%;
-      }
-      .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: centers;
-        justify-content: space-between;
-        margin-left: -10px;
-        border-bottom: 1px solid black;
-      }
-      .navbar .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: centers;
-        justify-content: center;
-        margin-left: 10px;
-      }
-      .navbar .logo img {
-        height: 60px;
-        margin: 0 8px 0 0;
-      }
-      .navbar .options {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0px;
-      }
-      .navbar .options img {
-        height: 40px;
-        margin: 6px;
-      }
-      .navbar .options img:hover {
-        cursor: pointer;
-      }
-      .menu {
-        margin-top: 20px;
-        width: 95%;
-        height: 85vh;
-        background: white;
-        position: absolute;
-      }
-      .menu-content {
-        display: flex;
-        flex-direction: column;
-      }
-      .menu-option-container div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: left;
-
-        margin: 0 0 0 25px;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.438);
-        width: 85%;
-      }
-      .menu-option-container div img {
-        height: 28px;
-        margin: 20px 15px 20px 10px;
-      }
-      .contacto-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
-      .contacto {
-        position: absolute;
-        bottom: 0px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        border-bottom: 2px solid black;
-        width: 88%;
-      }
-      .contacto img {
-        height: 30px;
-        margin: 10px;
-      }
-      .data-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        align-items: center;
-        width: 98%;
-        height: 100%;
-        margin-top: 20px;
-      }
-      .data-subcontainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 95%;
-        height: 100%;
-      }
-      .data-subcontainer div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 68px;
-        margin: 10px;
-        border: 2px solid gray;
-        border-radius: 30px;
-      }
-      .data-subcontainer div img {
-        height: 40px;
-        margin: 10px;
-      }
-      .notification-container {
-        width: 94%;
-        height: 100%;
-        margin: 30px -20px;
-        border: 1px solid black;
-        border-radius: 30px;
-      }
-      .notification-container div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: left;
-        margin: 15px;
-      }
-      .notification-container div img {
-        height: 30px;
-        margin: 0 10px 0 10px;
-      }
-
-      @media (min-width: 600px) {
-        .navbar {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          margin: -10px;
-          border-bottom: 2px solid black;
-        }
-        .navbar h1 {
-          font-size: 25px;
-        }
-        .navbar .logo {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          margin-left: 10px;
-        }
-        .navbar .logo img {
-          height: 34px;
-          margin: 0 8px 0 0;
-        }
-        .navbar .options {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin: 6px 10px 6px 6px;
-        }
-        .navbar .options img {
-          height: 30px;
-          margin: 10px;
-        }
-
-        .menu {
-          margin-top: 20px;
-          width: 300px;
-          height: 500px;
-          background: white;
-          position: absolute;
-          top: 35px;
-          right: 10px;
-          border: 1px solid black;
-          border-radius: 30px;
-          padding: 15px 10px;
-        }
-        .menu-content {
-          display: flex;
-          flex-direction: column;
-        }
-        .menu-option-container div {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: left;
-
-          margin: 0 0 0 25px;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.438);
-          width: 85%;
-        }
-        .menu-option-container div img {
-          height: 28px;
-          margin: 20px 15px 20px 10px;
-        }
-        .contacto-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-        }
-        .contacto {
-          position: absolute;
-          bottom: 20px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-
-          border-bottom: 2px solid rgba(0, 0, 0, 0.521);
-          width: 68%;
-        }
-        .contacto img {
-          height: 30px;
-          margin: 10px;
-        }
-
-        .data-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          align-items: center;
-          width: 98%;
-          height: 100%;
-          margin: 32px;
-        }
-        .data-subcontainer {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          align-items: center;
-          width: 98%;
-          height: 100%;
-        }
-      }
-
-      .visible {
-        display: block;
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="./Principal.css" />
+    <link rel="stylesheet" href="./Gallery.css" />
   </head>
   <body>
     <div class="main-container">
+      <!-- Principal Navbar -->
       <nav class="navbar">
         <div class="logo">
           <img src="./assets/Logo.png" alt="" />
           <h1>Huerto Vertical</h1>
+        </div>
+        <div class="nav-menu-center">
+          <p id="init-nav">Inicio</p>
+          <p id="register-nav">Registrar Riego</p>
+          <p id="gallery-nav">Galería</p>
         </div>
         <div class="options">
           <img id="menu-icon" src="./assets/Menu.png" alt="" />
@@ -281,91 +27,167 @@
         </div>
       </nav>
 
-      <aside id="menu-container" class="menu hidden">
-        <div class="menu-content">
+      <!-- Porfile -->
+      <aside id="porfile-info" class="hidden out">
+        <div class="content" id="content-porfile">
+          <div class="user-info" id="content-porfile-div">
+            <img
+              src="./assets/Porfile-pic.png"
+              alt="Imagen de usuario"
+              id="usuario"
+            />
+            <div id="content-porfile-div">
+              <div>
+                <span id="username">Username:</span>
+                <span>valor de usuario</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-info" id="content-porfile-div">
+            <div class="other-info">
+              <div>Email: <span id="email">valor de email</span></div>
+              <div>Apellido: <span id="lastname">valor de apellido</span></div>
+              <div>
+                Tipo de usuario:
+                <span id="usertype">valor de tipo de usuario</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <img src="./assets/salir.png" alt="" />
+          <a href="./Principal.html">Salir</a>
+          <!-- Contenido adicional para la barra inferior -->
+        </div>
+      </aside>
+
+      <!-- Menu -->
+      <aside id="menu-container" class="hidden out">
+        <div class="menu-content" id="content-menu">
           <div class="menu-option-container">
             <div>
-              <img src="./assets/Water-icon.png" alt="" />
-              <p>Registro de Agua</p>
+              <img src="./assets/Water-icon.png" alt="img" />
+              <a href="./Principal.html">Registro de Agua</a>
             </div>
             <div>
-              <img src="./assets/Ligth-icon.png" alt="" />
-              <p>Status de Luz</p>
+              <img src="./assets/Ligth-icon.png" alt="img" />
+              <a href="./Principal.html">Status de Luz</a>
             </div>
             <div>
-              <img src="./assets/Humedad-icon.png" alt="" />
-              <p>Registrar Humedad</p>
+              <img src="./assets/Humedad-icon.png" alt="img" />
+              <a href="./Principal.html">Registrar Humedad</a>
             </div>
             <div>
-              <img src="./assets/Temperatura-icon.png" alt="" />
-              <p>Registrar Temperatura</p>
+              <img src="./assets/Temperatura-icon.png" alt="img" />
+              <a href="./Principal.html">Registrar Temperatura</a>
             </div>
             <div>
-              <img src="./assets/Us-icon.png" alt="" />
-              <p>Sobre Nosotros</p>
+              <img src="./assets/Us-icon.png" alt="img" />
+              <a href="./Principal.html">Sobre Nosotros</a>
             </div>
           </div>
           <div class="contacto-container">
             <div class="contacto">
-              <img src="./assets/Porfile.png" alt="" />
-              <p>Contactanos</p>
+              <img src="./assets/Contacto.png" alt="" />
+              <a href="./Principal.html">Contactanos</a>
             </div>
           </div>
         </div>
       </aside>
 
-      <div class="data-container">
-        <div>
-          <h3>Ultimos datos registrados</h3>
+      <!-- Main Menu -->
+      <div class="nav-menu-container">
+        <div class="nav-menu-center-mobile">
+          <p id="init-nav-mobile">Inicio</p>
+          <p id="register-nav-mobile">Registrar Riego</p>
+          <p id="gallery-nav-mobile">Galería</p>
         </div>
-        <div class="data-subcontainer">
-          <div>
-            <p>Temperatura</p>
-            <img src="./assets/Temperatura.png" alt="" />
-          </div>
-          <div>
-            <p>Luz</p>
-            <img src="./assets/Luz.png" alt="" />
-          </div>
-          <div>
-            <p>Humedad</p>
-            <img src="./assets/Humedad.png" alt="" />
-          </div>
-        </div>
-
-        <aside class="notification-container">
-          <div>
-            <img src="./assets/Bullet.png" alt="" />
-            <p>Riego registrado a las: 06:24 con una duración de 3:56 horas</p>
-          </div>
-          <div>
-            <img src="./assets/Bullet.png" alt="" />
-            <p>Descenso de temperatura registrado a las 23:46.</p>
-          </div>
-          <div>
-            <img src="./assets/Bullet.png" alt="" />
-            <p>Riego manual a las 5:79 por parte de Usuario1.</p>
-          </div>
-        </aside>
       </div>
+
+      <!-- Main Containers -->
+      <!-- General controls and data -->
+      <div id="data-container-main-id">
+        <div class="data-container" id="data-container-id">
+          <div>
+            <h3>Ultimos datos registrados</h3>
+          </div>
+          <div class="data-subcontainer">
+            <div>
+              <p>Temperatura</p>
+              <img src="./assets/Temperatura.png" alt="" />
+            </div>
+            <div>
+              <p>Luz</p>
+              <img src="./assets/Luz.png" alt="" />
+            </div>
+            <div>
+              <p>Humedad</p>
+              <img src="./assets/Humedad.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Notification square -->
+          <aside class="notification-container">
+            <div>
+              <img src="./assets/Bullet.png" alt="" />
+              <p>
+                Riego registrado a las: 06:24 con una duración de 3:56 horas
+              </p>
+            </div>
+            <div>
+              <img src="./assets/Bullet.png" alt="" />
+              <p>Descenso de temperatura registrado a las 23:46.</p>
+            </div>
+            <div>
+              <img src="./assets/Bullet.png" alt="" />
+              <p>Riego manual a las 5:79 por parte de Usuario1.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Register -->
+      <div id="register-main-id" class="hidden-nav">
+
+      </div>
+
+      <!-- Image gallery -->
+      <div id="gallery-main-id" class="hidden-nav">
+        <section id="gallery-id" class="gallery-container hidden-nav">
+          <h2>Información de las Cosechas</h2>
+          <div class="gallery-grid">
+            <div class="marco">
+              <img src="./assets/Planta1.png" alt="" />
+              <h2>Planta1</h2>
+            </div>
+            <div class="marco">
+              <img src="./assets/Planta2.png" alt="" />
+              <h2>Planta2</h2>
+            </div>
+            <div class="marco">
+              <img src="./assets/Planta3.png" alt="" />
+              <h2>Planta3</h2>
+            </div>
+            <div class="marco">
+              <img src="./assets/Planta4.png" alt="" />
+              <h2>Planta4</h2>
+            </div>
+            <div class="marco">
+              <img src="./assets/Planta5.png" alt="" />
+              <h2>Planta6</h2>
+            </div>
+            <div class="marco">
+              <img src="./assets/Planta6.png" alt="" />
+              <h2>Planta6</h2>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!--  -->
     </div>
   </body>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const porfileIcon = document.getElementById("porfile-icon");
-    const menu = document.getElementById("menu-container");
-
-    const viewMenu = () => {
-      var menuClosed = menu.classList.contains("hidden");
-
-      if (!menuClosed) {
-        menu.classList.add("visible");
-      }
-      console.log("Hola");
-
-      menu.classList.toggle("hidden");
-    };
-
-    menuIcon.addEventListener("click", viewMenu);
-  </script>
+  <script src="./Principal.js"></script>
 </html>

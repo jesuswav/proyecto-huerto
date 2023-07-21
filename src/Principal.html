@@ -153,8 +153,9 @@
       <form action="" class="register-form">
         <h2>Registrar un nuevo riego</h2>
         <div class="principal">
+          <h4 style="margin-top: 0px;">Selecciona la jardinera</h4>
           <select name="jardineria" id="jarineria">
-            <option> </option>
+            <option>Mota</option>
             <option>Perejil</option>
             <option>Cilantro</option>
             <option>Tomate cherry</option>
@@ -164,16 +165,20 @@
               <label>
                 <h3>Temperatura de la jardinera</h3>
               </label>
-              <img src="./assets/Temperatura.png" alt="" style="width: 34px;">
-              <input type="range" name="price" class="slider-input" id="price" min="10" max="50" step="1" value="0">
-              <img src="./assets/Temperatura-icon.png" alt="" style="width: 34px;">
+              <div class="form-input-wraper">
+                <img src="./assets/Temperatura.png" alt="" style="width: 34px;">
+                <input type="range" name="price" class="slider-input" id="price" min="8" max="58" step="1" value="0">
+                <img src="./assets/Temperatura-icon.png" alt="" style="width: 34px;">
+              </div>
               <output class="price-output" for="price"></output>
             </div>
 
             <div class="slider">
               <h3>Humedad de la jardinera</h3>
-              <img src="./assets/Humedad-icon.png" alt="" style="width: 34px;">
-              <input type="range" min="0" max="50" class="slider-input" value="0" id="sliderInput" />
+              <div class="form-input-wraper">
+                <img src="./assets/Humedad-icon.png" alt="" style="width: 34px;">
+                <input type="range" min="0" max="100" class="slider-input" value="0" id="sliderInput" />
+              </div>
               <span id="sliderValue" class="humedad-slider">0</span>
             </div>
             <div class="temporizador">

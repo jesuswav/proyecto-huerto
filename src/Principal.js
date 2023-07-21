@@ -148,7 +148,10 @@ price.addEventListener("input", function () {
 const sliderInput = document.getElementById("sliderInput");
 const sliderValue = document.getElementById("sliderValue");
 
+sliderInput.textContent = sliderInput.value + "%";
+sliderValue.textContent = sliderInput.value + "%";
+
 // Actualizar el valor del span con el valor actual del slider
 sliderInput.addEventListener("input", function () {
-  sliderValue.textContent = sliderInput.value;
+  sliderValue.textContent = sliderInput.value + "%";
 });

@@ -55,6 +55,10 @@ font-family: 'VT323', monospace;
   align-items: center;
   justify-content: center;
 }
+.form-input-wraper {
+  display: flex;
+  flex-direction: row;
+}
 
 .form-button-register {
   margin: 22px;

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&family=Share+Tech+Mono&family=VT323&display=swap");
 
 body {
   width: 98%;
@@ -7,6 +8,7 @@ body {
   flex-direction: column;
   align-items: left;
   justify-content: left;
+  overflow-x: visible;
 
   font-family: "Roboto", sans-serif;
 }
@@ -19,6 +21,7 @@ body {
 .navbar {
   z-index: 10;
   width: 100%;
+  height: 82px;
 
   position: fixed !important;
   overflow-y: scroll;
@@ -68,6 +71,7 @@ body {
   overflow: hidden;
   bottom: 0;
   
+  height: 50px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -78,7 +82,7 @@ body {
   background: white;
 
   border-top: 1px solid rgba(0, 0, 0, 0.815);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.144);
 }
 .nav-menu-container .nav-menu-center-mobile {
   z-index: 10;
@@ -92,13 +96,17 @@ body {
   justify-content: center;
   text-decoration: none;
   color: rgb(109, 109, 109);
-  padding: 4px 8px;
-  margin: 15px 4px 0px 4px;
-  border: 2px solid black;
+  /* padding: 1px 5px; */
+  margin: 15px 8px 0px 8px;
+  /* border: 2px solid rgb(141, 141, 141); */
   border-radius: 8px;
 }
 .pushed {
+  padding: 4px 8px;
+  position: relative;
   background: rgb(223, 223, 223);
+  border: 2px solid rgb(15, 15, 15);
+  transition: 0.05s ease-in 0.01s;
 }
 
 #menu-container {
@@ -107,7 +115,7 @@ body {
   position: fixed !important;
   overflow-y: scroll;
   overflow: hidden;
-  top: 50px;
+  top: 8%;
 
   margin-top: 20px;
   width: 99%;
@@ -193,20 +201,35 @@ body {
   width: 95%;
   height: 100%;
 }
-.data-subcontainer div {
+.data-name-subcontainer {
+  overflow: hidden;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+.data-subcontainer .data-name-container {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 68px;
   margin: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 30px;
 }
-.data-subcontainer div img {
+.data-name-subcontainer img {
   height: 40px;
   margin: 10px;
+}
+.data-subcontainer .data-number {
+  color: black;
+  font-size: 42px;
+  font-family: "Share Tech Mono", monospace;
 }
 .notification-container {
   width: 94%;
@@ -234,7 +257,7 @@ body {
   position: fixed !important;
   overflow-y: scroll;
   overflow: hidden;
-  top: 70px;
+  top: 10%;
 
   width: 100%;
   height: 91vh;
@@ -351,8 +374,6 @@ body {
   }
   .navbar .nav-menu-center p:hover {
     cursor: pointer;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    opacity: 100%;
   }
   .nav-menu-container {
     display: none;
@@ -522,17 +543,17 @@ body {
   visibility: visible;
   opacity: 100%;
   /* transition: 0.2s ease-in; */
-  -webkit-transition: ease-out 0.4s;
-  -moz-transition: ease-out 0.4s;
-  transition: ease-out 0.4s;
+  -webkit-transition: ease-out 0.2s;
+  -moz-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
 }
 .hidden {
   visibility: hidden;
   opacity: 0%;
   /* transition: 0.2s ease-in-out; */
-  -webkit-transition: ease-out 0.4s;
-  -moz-transition: ease-out 0.4s;
-  transition: ease-out 0.4s;
+  -webkit-transition: ease-out 0.2s;
+  -moz-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
 }
 .visible-nav {
   display: block;
@@ -542,5 +563,12 @@ body {
 }
 
 .border-bottom {
-  border-bottom: 1px solid rgb(110, 110, 110);
+  padding: 4px 30px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  transition: 0.2s ease-in 0.03s;
+
+  /* border-radius: 6px;
+  background-color: rgb(238, 238, 238);
+  transition: 0.1s ease-in 0.01s; */
 }

@@ -1,0 +1,97 @@
+:root {
+  --body-bg-color: #1a1c1d;
+  --text-color: #aaaebc;
+  --hr-color: #26292a;
+  --red: #e74c3c;
+}
+
+.nav-menu-center {
+  list-style: none;
+}
+
+.nav-menu-center p {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* body {
+  margin: 30px 0;
+  font: 22px sans-serif;
+  background: var(--body-bg-color);
+  color: var(--text-color);
+} */
+
+hr {
+  border-color: var(--hr-color);
+  margin: 20px 0;
+}
+
+.nav-menu-center {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+}
+
+.nav-menu-center p {
+  position: relative;
+  display: block;
+  padding: 5px;
+}
+
+.nav-menu-center p::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  width: 85%;
+  height: 2px;
+  background: linear-gradient(to right, #808080ab, #808080be, #808080bd);
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-menu-center p:hover::before {
+  transform: scaleX(1);
+}
+
+/* ANIMATIONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav-menu-center[data-animation="to-left"] p::before {
+  transform-origin: right;
+}
+
+.nav-menu-center[data-animation="center"] p::before {
+  transform-origin: center;
+}
+
+.nav-menu-center[data-animation="bonus"] p::before {
+  transform-origin: right;
+}
+
+.nav-menu-center[data-animation="bonus"] p:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+/* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1rem;
+}
+
+.page-footer span {
+  color: var(--red);
+}

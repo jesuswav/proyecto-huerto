@@ -82,6 +82,8 @@ font-family: 'VT323', monospace;
   }
 
   .register-form {
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;

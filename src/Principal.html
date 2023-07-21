@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./Gallery.css" />
   <link rel="stylesheet" href="./Register.css">
   <link rel="stylesheet" href="./Time.css">
+  <link rel="stylesheet" href="Switch.css">
+  <link rel="stylesheet" href="./animations/Hover-animation.css">
 </head>
 
 <body>
@@ -114,17 +116,29 @@
           <h3>Ultimos datos registrados</h3>
         </div>
         <div class="data-subcontainer">
-          <div>
-            <p>Temperatura</p>
-            <img src="./assets/Temperatura.png" alt="" />
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Temperatura.png" alt="" />
+              <p>Temperatura</p>
+            </div>
+            <p class="data-number">15°</p>
           </div>
-          <div>
-            <p>Luz</p>
-            <img src="./assets/Luz.png" alt="" />
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Luz.png" alt="" />
+              <p>Luz</p>
+            </div>
+            <label class="switch">
+              <input class="switch-input" type="checkbox" id="check">
+              <span class="switch-slider round"></span>
+            </label>
           </div>
-          <div>
-            <p>Humedad</p>
-            <img src="./assets/Humedad.png" alt="" />
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Humedad.png" alt="" />
+              <p>Humedad</p>
+            </div>
+            <p class="data-number">56%</p>
           </div>
         </div>
 

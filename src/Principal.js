@@ -20,7 +20,6 @@ const registerMobile = document.getElementById("register-nav-mobile");
 const gallery = document.getElementById("gallery-nav");
 const galleryMobile = document.getElementById("gallery-nav-mobile");
 
-
 // Menu and Porfile functions
 const viewMenu = () => {
   if (!menuClosed) {
@@ -61,55 +60,63 @@ function outPorfileClick(event) {
 const viewInit = () => {
   dataContainer.classList.add("visible-nav");
   dataContainer.classList.remove("hidden-nav");
+  inicio.classList.add("border-bottom");
 
   galleryContainer.classList.add("hidden-nav");
   galleryContainer.classList.remove("visible-nav");
+  gallery.classList.remove("border-bottom");
 
   registerContainer.classList.add("hidden-nav");
   registerContainer.classList.remove("visible-nav");
+  register.classList.remove("border-bottom");
 
   // Cambiar los colores del boton
   inicioMobile.classList.add("pushed");
   registerMobile.classList.remove("pushed");
   galleryMobile.classList.remove("pushed");
 
-  console.log("-------------")
+  console.log("-------------");
 };
 const viewGallery = () => {
   dataContainer.classList.add("hidden-nav");
   dataContainer.classList.remove("visible-nav");
+  inicio.classList.remove("border-bottom");
 
   galleryContainer.classList.add("visible-nav");
   galleryContainer.classList.remove("hidden-nav");
+  gallery.classList.add("border-bottom");
 
-  registerContainer.classList.add("visible-nav");
-  registerContainer.classList.remove("hidden-nav");
+  registerContainer.classList.add("hidden-nav");
+  registerContainer.classList.remove("visible-nav");
+  register.classList.remove("border-bottom");
 
   // Cambiar los colores del boton
   inicioMobile.classList.remove("pushed");
   registerMobile.classList.remove("pushed");
   galleryMobile.classList.add("pushed");
 
-  console.log("-------------")
+  console.log("-------------");
 };
 const viewRegister = () => {
   dataContainer.classList.add("hidden-nav");
   dataContainer.classList.remove("visible-nav");
+  inicio.classList.remove("border-bottom");
 
   galleryContainer.classList.add("hidden-nav");
   galleryContainer.classList.remove("visible-nav");
+  gallery.classList.remove("border-bottom");
 
-  registerContainer.classList.add("hidden-nav");
-  registerContainer.classList.remove("visible-nav");
+  registerContainer.classList.add("visible-nav");
+  registerContainer.classList.remove("hidden-nav");
+  register.classList.add("border-bottom");
 
   // Cambiar los colores del boton
   inicioMobile.classList.remove("pushed");
   registerMobile.classList.add("pushed");
   galleryMobile.classList.remove("pushed");
 
-  console.log("-------------")
+  console.log("-------------");
 };
-
 
 // Event listeners Menu and Porfile
 window.addEventListener("click", outMenuClick, false);
@@ -126,3 +133,22 @@ register.addEventListener("click", viewRegister, false);
 inicioMobile.addEventListener("click", viewInit, false);
 galleryMobile.addEventListener("click", viewGallery, false);
 registerMobile.addEventListener("click", viewRegister, false);
+
+// Functions Sliders
+
+const price = document.querySelector("#price");
+const output = document.querySelector(".price-output");
+
+output.textContent = price.value + "°";
+
+price.addEventListener("input", function () {
+  output.textContent = price.value + "°";
+});
+
+const sliderInput = document.getElementById("sliderInput");
+const sliderValue = document.getElementById("sliderValue");
+
+// Actualizar el valor del span con el valor actual del slider
+sliderInput.addEventListener("input", function () {
+  sliderValue.textContent = sliderInput.value;
+});

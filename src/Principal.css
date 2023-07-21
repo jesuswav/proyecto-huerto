@@ -17,10 +17,12 @@ body {
   margin-top: 60px;
 }
 .navbar {
+  z-index: 10;
   width: 100%;
 
   position: fixed !important;
   overflow-y: scroll;
+  overflow: hidden;
   top: 0;
 
   display: flex;
@@ -59,8 +61,11 @@ body {
   display: none;
 }
 .nav-menu-container {
+  z-index: 10;
+
   position: fixed !important;
   overflow-y: scroll;
+  overflow: hidden;
   bottom: 0;
   
   width: 100%;
@@ -76,6 +81,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.144);
 }
 .nav-menu-container .nav-menu-center-mobile {
+  z-index: 10;
   display: flex;
   flex-direction: row;
 }
@@ -100,6 +106,7 @@ body {
 
   position: fixed !important;
   overflow-y: scroll;
+  overflow: hidden;
   top: 50px;
 
   margin-top: 20px;
@@ -226,6 +233,7 @@ body {
 
   position: fixed !important;
   overflow-y: scroll;
+  overflow: hidden;
   top: 70px;
 
   width: 100%;
@@ -300,7 +308,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: -10px;
+    margin: -8px;
     border-bottom: 2px solid black;
     overflow: hidden;
   }
@@ -329,7 +337,7 @@ body {
   }
   .navbar .options img {
     height: 30px;
-    margin: 10px;
+    margin: 8px 10px 0 10px;
   }
   .navbar .nav-menu-center {
     display: flex;
@@ -340,13 +348,11 @@ body {
   .navbar .nav-menu-center p {
     text-decoration: none;
     color: black;
-    transition: all 1s step-start;
   }
   .navbar .nav-menu-center p:hover {
     cursor: pointer;
-    border-bottom: 2px solid rgb(223, 220, 220);
+    border-bottom: 1px solid rgb(0, 0, 0);
     opacity: 100%;
-    transition: all .5s ease-in;
   }
   .nav-menu-container {
     display: none;
@@ -368,7 +374,7 @@ body {
     top: 35px;
     right: 10px;
     border: 2px solid black;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 15px 10px;
     overflow: hidden;
 
@@ -454,10 +460,11 @@ body {
     height: 340px;
 
     position: absolute;
+    top: 55px;
     right: 20px;
     background: white;
     border: 2px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 
     transition: 0.2s ease-in;
@@ -528,8 +535,12 @@ body {
   transition: ease-out 0.4s;
 }
 .visible-nav {
-  display: block
+  display: block;
 }
 .hidden-nav {
   display: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(110, 110, 110);
 }

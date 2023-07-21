@@ -1,0 +1,105 @@
+:root {
+  --inactive: #2d9bf0;
+  --active: #216ea8;
+}
+
+#time_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  width: fit-content;
+  margin: 0 auto;
+  /*   background: pink; */
+  /* position: relative;
+  top: 150px; */
+  transform: scale(1.5);
+  margin: 22px;
+}
+
+#time_input {
+  border: 2px solid var(--inactive);
+  width: fit-content;
+  color: #2d9bf0;
+  display: flex;
+  align-items: center;
+}
+
+.time-input {
+  width: 60px;
+  height: 60px;
+  border: none;
+  box-sizing: border-box;
+  padding: auto 15px;
+  text-align: center;
+  color: #132c14;
+}
+
+.time-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.label {
+  font-size: 0.55rem;
+  position: absolute;
+  top: 4.5px;
+}
+
+.label.lbl-hrs {
+  left: 20px;
+}
+
+.label.lbl-min {
+  left: 14px;
+}
+
+.label.lbl-sec {
+  left: 13px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.time-input::-webkit-outer-spin-button,
+.time-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+#time_input,
+.time-input {
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.time-input:focus {
+  outline: 3px solid var(--active);
+}
+
+.time-input:focus + .label {
+  color: var(--active);
+}
+
+.time-input.invalid:focus {
+  outline: 3px solid red;
+}
+
+.time-input.invalid:focus + .label {
+  color: red;
+}
+
+#error {
+  width: 280px;
+  position: relative;
+  top: 170px;
+  margin: 0 auto;
+  color: red;
+  visibility: hidden;
+}

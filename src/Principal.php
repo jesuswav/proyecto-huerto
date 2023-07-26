@@ -1,0 +1,293 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principal</title>
+  <link rel="stylesheet" href="./colors.css" />
+  <link rel="stylesheet" href="./Principal.css" />
+  <link rel="stylesheet" href="./Gallery.css" />
+  <link rel="stylesheet" href="./Register.css">
+  <link rel="stylesheet" href="./Time.css">
+  <link rel="stylesheet" href="Switch.css">
+  <link rel="stylesheet" href="./animations/Hover-animation.css">
+</head>
+
+<?php
+
+require './Backend/Conection.php';
+if (isset($_SESSION['username'])) {
+
+  $username = $_SESSION['username'];
+
+  $query = "SELECT * FROM users WHERE username = '$username'";
+  $result = mysqli_query($conn, $query);
+
+  while ($row = mysqli_fetch_assoc($result)) {
+    $username = $row['username'];
+    $password = $row['password'];
+    $image = $row['porfile_pic'];
+    $created = $row['created'];
+  }
+}
+?>
+
+<body>
+  <!-- Principal Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./assets/Logo.png" alt="" />
+      <h1>Huerto Vertical</h1>
+    </div>
+    <div class="nav-menu-center">
+      <p id="init-nav" class="border-bottom">Inicio</p>
+      <p id="register-nav" class="">Registrar Riego</p>
+      <p id="gallery-nav" class="">Galería</p>
+    </div>
+    <div class="options">
+      <img id="menu-icon" src="./assets/Menu.png" alt="" />
+      <img id="porfile-icon" src="data:image/jpg;base64,<?php echo base64_encode($image) ?>" alt="" />
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <!-- Porfile -->
+    <aside id="porfile-info" class="hidden out">
+      <div class="content" id="content-porfile">
+        <div class="user-info" id="content-porfile-div">
+          <img width="100px" src="data:image/jpg;base64,<?php echo base64_encode($image) ?>" />
+          <div id="content-porfile-div">
+            <div>
+              <span id="username">Username:</span>
+              <span>
+                <?php echo $username ?>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-info" id="content-porfile-div">
+          <div class="other-info">
+            <div>Email: <span id="email">valor de email</span></div>
+            <div>Apellido: <span id="lastname">valor de apellido</span></div>
+            <div>
+              Tipo de usuario:
+              <span id="usertype">valor de tipo de usuario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <img src="./assets/salir.png" alt="" />
+        <a href="./Principal.html">Salir</a>
+        <!-- Contenido adicional para la barra inferior -->
+      </div>
+    </aside>
+
+    <!-- Menu -->
+    <aside id="menu-container" class="hidden out">
+      <div class="menu-content" id="content-menu">
+        <div class="menu-option-container">
+          <div>
+            <img src="./assets/Water-icon.png" alt="img" />
+            <a href="./Principal.html">Historial de Agua</a>
+          </div>
+          <div>
+            <img src="./assets/Humedad-icon.png" alt="img" />
+            <a href="./Principal.html">Historial Humedad</a>
+          </div>
+          <div>
+            <img src="./assets/Temperatura-icon.png" alt="img" />
+            <a href="./Principal.html">Historial Temperatura</a>
+          </div>
+          <div>
+            <img src="./assets/Ligth-icon.png" alt="img" />
+            <a href="./Principal.html">Status de Luz</a>
+          </div>
+          <div>
+            <img src="./assets/Us-icon.png" alt="img" />
+            <a href="./Principal.html">Sobre Nosotros</a>
+          </div>
+        </div>
+        <div class="contacto-container">
+          <div class="contacto">
+            <img src="./assets/Contacto.png" alt="" />
+            <a href="./Principal.html">Contactanos</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Menu -->
+    <div class="nav-menu-container">
+      <div class="nav-menu-center-mobile">
+        <p id="init-nav-mobile" class="pushed">Inicio</p>
+        <p id="register-nav-mobile" class="">Registrar Riego</p>
+        <p id="gallery-nav-mobile" class="">Galería</p>
+      </div>
+    </div>
+
+    <!-- Main Containers -->
+    <!-- General controls and data -->
+    <div id="data-container-main-id">
+      <div class="data-container" id="data-container-id">
+        <div>
+          <h3>Ultimos datos registrados</h3>
+        </div>
+        <div class="data-subcontainer">
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Temperatura.png" alt="" />
+              <p>Temperatura</p>
+            </div>
+            <p class="data-number">15°</p>
+          </div>
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Luz.png" alt="" />
+              <p>Luz</p>
+            </div>
+            <label class="switch">
+              <input class="switch-input" type="checkbox" id="check">
+              <span class="switch-slider round"></span>
+            </label>
+          </div>
+          <div class="data-name-container">
+            <div class="data-name-subcontainer">
+              <img src="./assets/Humedad.png" alt="" />
+              <p>Humedad</p>
+            </div>
+            <p class="data-number">56%</p>
+          </div>
+        </div>
+
+        <!-- Notification square -->
+        <aside class="notification-container">
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>
+              Riego registrado a las: 06:24 con una duración de 3:56 horas
+            </p>
+          </div>
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>Descenso de temperatura registrado a las 23:46.</p>
+          </div>
+          <div>
+            <img src="./assets/Bullet.png" alt="" />
+            <p>Riego manual a las 5:79 por parte de Usuario1.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-main-id" class="register-container hidden-nav">
+      <form action="./Backend/Register.php" method="POST" class="register-form">
+        <h2>Registrar un nuevo riego</h2>
+        <div class="principal">
+          <h4 style="margin-top: 0px;">Selecciona la jardinera</h4>
+          <select name="jardineria" id="jarineria">
+            <option>Mota</option>
+            <option>Perejil</option>
+            <option>Cilantro</option>
+            <option>Tomate cherry</option>
+          </select>
+          <div class="subprincipal">
+            <div class="temperatura">
+              <label>
+                <h3>Temperatura de la jardinera</h3>
+              </label>
+              <div class="form-input-wraper">
+                <img src="./assets/Temperatura.png" alt="" style="width: 34px;">
+                <input type="range" name="price" class="slider-input" id="price" min="8" max="58" step="1" value="0">
+                <img src="./assets/Temperatura-icon.png" alt="" style="width: 34px;">
+              </div>
+              <output class="price-output" for="price"></output>
+            </div>
+
+            <div class="slider">
+              <h3>Humedad de la jardinera</h3>
+              <div class="form-input-wraper">
+                <img src="./assets/Humedad-icon.png" alt="" style="width: 34px;">
+                <input type="range" min="0" max="100" class="slider-input" value="0" name="sliderInput" id="sliderInput" />
+              </div>
+              <span id="sliderValue" class="humedad-slider">0</span>
+            </div>
+            <div class="temporizador">
+              <h2>Temporizador</h2>
+              <!-- <input type="time" style="width: 20vh; height: 5vh;"> -->
+              <!-- Input for time -->
+              <div id="time_wrapper">
+                <div id="time_input">
+                  <label for="hours" class="time-label">
+                    <input class="time-input" type="number" name="hours" id="hours" value="0">
+                    <span class="label lbl-hrs">hours</span>
+                  </label>
+                  <span>:</span>
+                  <label for="minutes" class="time-label">
+                    <input class="time-input" type="number" name="minutes" id="minutes" value="00">
+                    <span class="label lbl-min">minutes</span>
+                  </label>
+                  <span>:</span>
+                  <label for="seconds" class="time-label">
+                    <input class="time-input" type="number" name="seconds" id="seconds" value="00">
+                    <span class="label lbl-sec">seconds</span>
+                  </label>
+                </div>
+              </div>
+              <div id="error"></div>
+            </div>
+          </div>
+          <button type="submit" name="insertar" class="form-button-register">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Image gallery -->
+  <div id="gallery-main-id" class="hidden-nav">
+    <section id="gallery-id" class="gallery-container">
+      <h2>Información de las Cosechas</h2>
+      <div class="gallery-grid">
+        <div class="marco">
+          <img src="./assets/Planta1.png" alt="" />
+          <h2>Planta 1</h2>
+        </div>
+        <div class="marco">
+          <img src="./assets/Planta2.png" alt="" />
+          <h2>Planta 2</h2>
+        </div>
+        <div class="marco">
+          <img src="./assets/Planta3.png" alt="" />
+          <h2>Planta 3</h2>
+        </div>
+        <div class="marco">
+          <img src="./assets/Planta4.png" alt="" />
+          <h2>Planta 4</h2>
+        </div>
+        <div class="marco">
+          <img src="./assets/Planta5.png" alt="" />
+          <h2>Planta 6</h2>
+        </div>
+        <div class="marco">
+          <img src="./assets/Planta6.png" alt="" />
+          <h2>Planta 6</h2>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!--  -->
+  </div>
+</body>
+<script src="./Principal.js"></script>
+
+
+
+</html>
